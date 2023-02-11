@@ -1,0 +1,33 @@
+@use "./mixins.module.scss" as mixins;
+@include mixins.font;
+
+.main {
+
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  display: flex;
+
+  &__paragraph {
+
+    align-self: center;
+    font-size: 1.3em;
+    line-height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-family: "neue-montreal1",
+      sans-serif;
+    font-weight: 600;
+    overflow-wrap: break-word;
+
+
+    @media (max-width: 800px) {
+      & {
+        font-size: 1em;
+      }
+    }
+
+  }
+}
