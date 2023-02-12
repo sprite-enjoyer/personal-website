@@ -1,6 +1,6 @@
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import styles from "../styles/projects.module.scss";
-
+import { Tooltip } from "@nextui-org/react";
 interface Repository {
   name: string;
   description: string;
@@ -45,11 +45,18 @@ const Projects = () => {
     <div className={styles["main"]} >
       <div className={styles["main__list"]}>
         {modifiedData.map(repo =>
-          <div key={repo.name} className={styles["main__list__item"]} >
-            <a className={styles["main__list__item__link"]} href={repo.html_url} target="_blank" >
-              {repo.name}
-            </a>
-          </div>
+          <Tooltip
+            animated
+            content={repo.description}
+            css={{ backgroundColor: "rgba(255, 255, 255, 0.507)", fontFamily: "neue-montreal3, sans-serif" }}
+            placement="left"
+          >
+            <div key={repo.name} className={styles["main__list__item"]} >
+              <a className={styles["main__list__item__link"]} href={repo.html_url} target="_blank" >
+                {repo.name}
+              </a>
+            </div>
+          </Tooltip>
         )}
       </div>
     </div>
