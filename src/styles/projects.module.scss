@@ -49,6 +49,7 @@
         line-height: 100px;
         color: rgb(46, 46, 46);
         transition: all 0.3s ease;
+        user-select: none;
 
         &:hover {
           color: rgb(0, 0, 0);
