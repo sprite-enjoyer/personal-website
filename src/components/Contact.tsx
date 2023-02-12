@@ -5,7 +5,6 @@ const Contact = () => {
 
   const infoArr: [string, string, string, boolean][] =
     [
-      ["GitHub", "https://github.com/sprite-enjoyer", "/logos/github.png", true],
       ["LinkedIn", "https://www.linkedin.com/in/saba-samkharadze-4ab97b22b/", "/logos/linkedin.png", true],
       ["Mobile", "+995 597 90 45 54", "logos/phone.png", false],
       ["E-mail", "samkharadze.saba01@gmail.com", "logos/mail.png", false]
@@ -18,7 +17,7 @@ const Contact = () => {
         <div className={styles["main__content__linksWrapper"]} >
           {
             infoArr.map((info, i) =>
-              <div className={styles["main__content__linksWrapper__linkWrapper"]} >
+              <div key={infoArr[i][0]} className={styles["main__content__linksWrapper__linkWrapper"]} >
                 <a
                   href={infoArr[i][1]}
                   target="_blank"
