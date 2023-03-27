@@ -8,6 +8,8 @@ import Head from "next/head";
 export default function Home() {
   const [section, setSection] = useState(0);
 
+
+
   return (
     <>
       <Head>
@@ -24,6 +26,11 @@ export default function Home() {
         <meta property="og:description" content="Fullstack/Frontend developer" />
         <meta name="google" content="nositelinkssearchbox" />
         <meta name="google" content="notranslate" />
+        <title>{"Saba Samkharadze"}</title>
+        <link rel="shortcut icon" href="favicon.svg" />
+        <meta charSet="utf-8" />
+        <meta property="og:image" content="/favicon-32x32.png" />
+        <meta property="og:locale" content="en" />
       </Head>
       <div className={styles["wrapper"]} >
         <div className={styles["main"]} >
