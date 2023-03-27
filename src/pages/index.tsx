@@ -8,8 +8,6 @@ import Head from "next/head";
 export default function Home() {
   const [section, setSection] = useState(0);
 
-
-
   return (
     <>
       <Head>
@@ -42,7 +40,7 @@ export default function Home() {
               FullStack/Frontend Developer
             </span>
           </div>
-          <InfoBox section={section} setSection={setSection} />
+          <InfoBox section={section} />
           <VerticalNavbar selected={section} setSelected={setSection} />
         </div>
       </div>

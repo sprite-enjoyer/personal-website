@@ -1,22 +1,21 @@
 import styles from "../styles/infoBox.module.scss";
-import { Dispatch, ReactNode } from "react";
+import { Dispatch, Fragment, ReactNode } from "react";
 import Projects from "./Projects";
 import Contact from "./Contact";
 import Landing from "./Landing";
 
 export interface InfoBoxProps {
   section: number,
-  setSection: Dispatch<any>
 }
 
-const InfoBox = ({ section, setSection }: InfoBoxProps) => {
+const InfoBox = ({ section }: InfoBoxProps) => {
 
   const map = new Map<number, ReactNode>(
-    [[0, Landing()],
-    [1, Projects()],
-    [2, Contact()]]
+    [[0, <Landing key={1} />],
+    [1, <Projects key={2} />],
+    [2, <Contact key={3} />]]
   );
-  const reactNode = map.has(section) ? map.get(section) : <>error!</>;
+  const reactNode = map.has(section) ? map.get(section) : <Fragment key={4}>error!</Fragment>;
 
   return (
     <div className={styles["main"]} >
