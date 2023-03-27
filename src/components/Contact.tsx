@@ -24,6 +24,8 @@ const Contact = () => {
       phone: content === "phone" ? "copied!" : "Click to copy!",
       phoneBackgroundColor: content === "phone" ? "#5cb85c" : "rgb(200, 200, 200)"
     });
+    if (content === "email") navigator.clipboard.writeText("samkharadze.saba01@gmail.com");
+    else navigator.clipboard.writeText("+995 597 90 45 54");
   };
 
   useEffect(() => {
