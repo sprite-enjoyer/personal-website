@@ -21,6 +21,7 @@ async function getProjects(username: string): Promise<GetProjectsResult> {
   try {
     const response = await fetch(`https://api.github.com/users/${username}/repos`);
     const repos = await response.json() as Repository[];
+    repos.map(repo => repo.name = repo.name.replace(/[-_]/g, " "));
     return { data: repos };
   } catch (error: any) {
     return { data: [], error: error.toString() }
